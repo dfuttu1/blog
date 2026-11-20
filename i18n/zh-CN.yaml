@@ -337,7 +337,7 @@ home_tech_stack_subtitle:
 footer_about:
   other: "关于我"
 footer_about_desc:
-  other: "{{ .Author }}，做后端和运维，记录部署踩坑、工具用法和读书笔记。"
+  other: "{{ .Author }}，写后端，也做算法与 AI 应用，记录技术实践与学习笔记。"
 footer_quick_links:
   other: "快速链接"
 footer_tech_stack:
