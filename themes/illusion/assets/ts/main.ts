@@ -1460,7 +1460,6 @@ const FooterManager = {
     if (copyrightEl) {
       const prefix = I18n.t('footer_copyright_prefix');
       const separator = I18n.t('footer_copyright_separator');
-      const webmaster = I18n.t('footer_copyright_webmaster');
       const reserved = I18n.t('footer_copyright_reserved');
       const rights = I18n.t('footer_copyright_rights');
 
@@ -1468,7 +1467,7 @@ const FooterManager = {
         ? `${currentYear}`
         : `${startYear}${separator}${currentYear}`;
 
-      copyrightEl.innerHTML = `${prefix} ${yearPart} <a href="${this.siteUrl}">${this.siteName}</a> ${webmaster} · ${reserved} <a href="${this.siteUrl}">${this.siteName}</a> ${rights}`;
+      copyrightEl.innerHTML = `${prefix} ${yearPart} <a href="${this.siteUrl}">${this.siteName}</a> · ${reserved}${rights}`;
     }
 
     // ----- 更新驱动信息：显示 Hugo 引擎名称、主题名称和作者 GitHub 链接 -----

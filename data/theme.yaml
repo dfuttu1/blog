@@ -125,21 +125,21 @@ about:
     title: "技术理念"                        # 理念区块标题
 
     items:                                   # 理念条目列表，每项包含图标、标题、描述
-      - icon: "fas fa-feather-alt"           # Font Awesome 图标
-        title: "优雅简洁"                    # 理念关键词
-        description: "追求代码的简洁性和可维护性，相信好的代码本身就是最好的文档"
+      - icon: "fas fa-flag-checkered"        # Font Awesome 图标
+        title: "先跑通，再优化"                # 理念关键词
+        description: "先让东西跑起来，结构和性能按实际需要再补"
 
       - icon: "fas fa-graduation-cap"
-        title: "持续学习"
-        description: "技术日新月异，保持好奇心和学习能力是开发者最重要的品质"
+        title: "边做边学"
+        description: "遇到不会的就现学，做完再回头补原理"
 
-      - icon: "fas fa-share-alt"
-        title: "分享共赢"
-        description: "知识因分享而更有价值，开源精神推动技术进步"
+      - icon: "fas fa-pen-fancy"
+        title: "写下来"
+        description: "踩过的坑和解决办法记一笔，下次不用重新踩"
 
-      - icon: "fas fa-user-check"
-        title: "用户体验"
-        description: "技术服务于人，优秀的用户体验是产品的灵魂"
+      - icon: "fas fa-compress-arrows-alt"
+        title: "够用就好"
+        description: "不过度设计，也不为了新技术而新技术"
 
   # ----- 联系方式区块 -----
   contact:
