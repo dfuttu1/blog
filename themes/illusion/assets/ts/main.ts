@@ -1479,9 +1479,8 @@ const FooterManager = {
       const hugo = I18n.t('footer_powered_hugo');
       const sep = I18n.t('footer_powered_separator');
       const theme = I18n.t('footer_powered_theme');
-      const authorLabel = I18n.t('footer_powered_author');
 
-      poweredEl.innerHTML = `${prefix} <a href="https://gohugo.io" target="_blank" rel="noopener">${hugo}</a> ${sep} ${theme}<a href="https://github.com/aizexintong/illusion" target="_blank" rel="noopener">幻梦 Illusion</a> ${sep} ${authorLabel}<a href="https://github.com/aizexintong" target="_blank" rel="noopener">爱则心痛</a>`;
+      poweredEl.innerHTML = `${prefix} <a href="https://gohugo.io" target="_blank" rel="noopener">${hugo}</a> ${sep} ${theme}<a href="https://github.com/aizexintong/illusion" target="_blank" rel="noopener">幻梦 Illusion</a>`;
     }
 
     // ----- 更新运行时长：计算自建站以来的完整时间差，渲染为 年-月-日 T 时:分:秒 格式 -----
