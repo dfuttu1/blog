@@ -1,53 +1,129 @@
-baseURL = "https://dfuttu1.github.io/blog/"
-locale = "zh-cn"
-defaultContentLanguage = "zh-cn"
-title = "dfuttu 的博客"
-theme = "PaperMod"
+# =============================================================================
+# 幻梦 Illusion v1.1.0 站点配置
+# 主题源码 vendor 在 themes/illusion（来自 github.com/aizexintong/illusion）
+# =============================================================================
+
+baseURL = 'https://dfuttu1.github.io/blog/'
+locale = 'zh-CN'
+languageName = '中文'
+title = 'dfuttu 的博客'
+theme = 'illusion'
+defaultContentLanguage = 'zh'
+defaultContentLanguageInSubdir = false
+enableGitInfo = true
 enableRobotsTXT = true
-enableEmoji = true
-
-[pagination]
-  pagerSize = 20
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
 
 [params]
-  env = "production"
-  description = "记录技术折腾、部署踩坑与读书笔记"
   author = "dfuttu"
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = true
-  ShowRssButtonInSectionTermList = true
-  ShowFullTextinRSS = true
+  description = "记录技术折腾、部署踩坑与读书笔记"
+  email = "dfuttu@qq.com"
+  github = "dfuttu1"
+  domain = "dfuttu1.github.io"
+  siteTime = "2026-11-20T00:00:00+08:00"
 
-  [params.homeInfoParams]
-    Title = "你好，我是 dfuttu"
-    Content = "记录技术折腾、部署踩坑与读书笔记。"
+  enableDarkMode = true
+  enableSearch = true
+  searchProvider = "local"
+  enableParticles = true
+  enable3DEffects = true
+  enableScrollAnimations = true
+  enableTypewriter = true
+  enableAccessibility = true
+  enableTOC = true
+  enableComments = false
+  lazyLoadImages = true
+  enableMath = true
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/dfuttu1"
+  enableSchema = true
+  enableOpenGraph = true
+  enableTwitterCards = true
 
-[[menu.main]]
-  identifier = "posts"
-  name = "文章"
-  url = "/posts/"
-  weight = 10
+  commentsProvider = "giscus"
+  disqusShortname = ""
+  utterancesRepo = ""
+  utterancesIssueTerm = "pathname"
+  giscusRepo = ""
+  giscusRepoId = ""
+  giscusCategory = ""
+  giscusCategoryId = ""
+  giscusMapping = "pathname"
+  giscusStrict = "0"
+  giscusReactions = "1"
+  giscusEmitMetadata = "0"
+  giscusInputPosition = "bottom"
+  giscusLang = "zh-CN"
+  twikooEnvId = ""
+  twikooRegion = ""
+  twikooLang = "zh-CN"
+  walineServerURL = ""
+  walineLang = "zh-CN"
+  walinePageSize = 10
+  walineMeta = ['nick', 'mail', 'link']
+  walineRequiredMeta = ['nick', 'mail']
+  artalkServer = ""
+  artalkSite = ""
+  artalkPlaceholder = "说点什么吧..."
+  artalkDarkMode = "auto"
 
-[[menu.main]]
-  identifier = "tags"
-  name = "标签"
-  url = "/tags/"
-  weight = 20
+[menus]
+  [[menus.main]]
+    name = '首页'
+    pageRef = '/'
+    weight = 5
+    [menus.main.params]
+      icon = 'fas fa-home'
 
-[[menu.main]]
-  identifier = "archives"
-  name = "归档"
-  url = "/archives/"
-  weight = 30
+  [[menus.main]]
+    name = '文章'
+    pageRef = '/posts'
+    weight = 10
+    [menus.main.params]
+      icon = 'fas fa-file-alt'
+
+  [[menus.main]]
+    name = '归档'
+    url = '/archives/'
+    weight = 15
+    [menus.main.params]
+      icon = 'fas fa-archive'
+
+  [[menus.main]]
+    name = '标签'
+    pageRef = '/tags/'
+    weight = 20
+    [menus.main.params]
+      icon = 'fas fa-tags'
+
+  [[menus.main]]
+    name = '关于'
+    pageRef = '/about'
+    weight = 30
+    [menus.main.params]
+      icon = 'fas fa-user'
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
+    tabWidth = 2
+    lineNos = false
+
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)'], ['$', '$']]
+
+[outputs]
+  home = ["HTML", "JSON", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
