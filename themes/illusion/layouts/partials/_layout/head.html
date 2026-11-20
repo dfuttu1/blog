@@ -10,8 +10,11 @@
 {{- /* 根据页面类型动态设置标题：首页只显示站点名，其他页面为 "页面标题 | 站点名" */ -}}
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
-{{- /* SVG 图标 */ -}}
-<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+{{- /* 站点图标：由上传图片生成 */ -}}
+<link rel="icon" type="image/png" sizes="64x64" href="{{ "favicon.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="preconnect" href="https://v2.jinrishici.com" crossorigin>
 
 {{- /* ========== 资源预连接和 DNS 预解析 ========== */ -}}
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
