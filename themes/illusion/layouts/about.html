@@ -40,6 +40,14 @@
                   {{ if eq .label (i18n "about_articles") }}{{ len (where site.RegularPages "Type" "posts") }}
                   {{ else if eq .label (i18n "about_skills") }}{{ len (default slice (hugo.Data.theme.skills).skills) }}
                   {{ else }}{{ .number }}{{ end }}
+                {{ else if hasPrefix .number "since:" }}
+                  {{- /* since:<RFC3339> 表示「从某时至今」，按年月自动计算 */ -}}
+                  {{- $since := time.AsTime (strings.TrimPrefix "since:" .number) -}}
+                  {{- $now := now -}}
+                  {{- $years := sub $now.Year $since.Year -}}
+                  {{- $months := sub (int $now.Month) (int $since.Month) -}}
+                  {{- if lt $months 0 }}{{ $years = sub $years 1 }}{{ $months = add $months 12 }}{{ end -}}
+                  {{ $years }}年{{ $months }}个月
                 {{ else }}{{ .number }}{{ end }}
               </div>
               <div class="stat-label">{{ .label }}</div>
