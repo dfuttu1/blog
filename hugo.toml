@@ -16,7 +16,7 @@ enableRobotsTXT = true
 [params]
   author = "dfuttu"
   description = "记录技术折腾、部署踩坑与读书笔记"
-  email = "dfuttu@qq.com"
+  email = ""
   github = "dfuttu1"
   domain = "dfuttu1.github.io"
   siteTime = "2026-11-20T00:00:00+08:00"

@@ -9,7 +9,7 @@ author: "dfuttu"
 
 ## 这套博客怎么工作
 
-- 静态站点由 [Hugo](https://gohugo.io/) 生成，主题是 PaperMod
+- 静态站点由 [Hugo](https://gohugo.io/) 生成，主题是幻梦 Illusion
 - 托管在 GitHub Pages，仓库 `dfuttu1/blog`
 - 推送 `main` 分支后，GitHub Actions 自动构建并部署
 

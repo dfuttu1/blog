@@ -8,7 +8,7 @@
         <h2 class="title-anime">{{ i18n "footer_about" }}</h2>
         <p>{{ i18n "footer_about_desc" (dict "Author" .Site.Params.author) }}</p>
         <div class="contact-info">
-          <p><i class="fas fa-envelope"></i> {{ .Site.Params.email }}</p>
+          {{ with .Site.Params.email }}<p><i class="fas fa-envelope"></i> {{ . }}</p>{{ end }}
           <p><i class="fas fa-globe"></i> {{ .Site.Params.domain }}</p>
         </div>
       </div>

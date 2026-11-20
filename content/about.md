@@ -22,4 +22,3 @@ build:
 ## 联系
 
 - GitHub：[dfuttu1](https://github.com/dfuttu1)
-- Email：dfuttu@qq.com
