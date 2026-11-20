@@ -1431,6 +1431,7 @@ const FooterManager = {
   siteTime: '',
   siteUrl: '',
   siteName: '',
+  siteAuthor: '',
   pageLoadTime: 0,
   renderTime: 0,
   uptimeColors: ['#E06050', '#E09040', '#E0A070', '#50C878', '#60A8D0', '#D08090'],
@@ -1443,6 +1444,7 @@ const FooterManager = {
     this.siteTime = cfg.siteTime || '';
     this.siteUrl = cfg.baseURL || '';
     this.siteName = cfg.siteName || '';
+    this.siteAuthor = cfg.author || this.siteName;
     this.pageLoadTime = (window as any).pageLoadTime || performance.now();
     this.renderTime = performance.now() - this.pageLoadTime;
     this.updateFooter();
@@ -1467,7 +1469,7 @@ const FooterManager = {
         ? `${currentYear}`
         : `${startYear}${separator}${currentYear}`;
 
-      copyrightEl.innerHTML = `${prefix} ${yearPart} <a href="${this.siteUrl}">${this.siteName}</a> · ${reserved}${rights}`;
+      copyrightEl.innerHTML = `${prefix} ${yearPart} <a href="${this.siteUrl}">${this.siteAuthor}</a> · ${reserved}${rights}`;
     }
 
     // ----- 更新驱动信息：显示 Hugo 引擎名称、主题名称和作者 GitHub 链接 -----
