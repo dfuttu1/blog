@@ -229,7 +229,7 @@ social:
       show: true                             # 是否启用并显示该社交图标：true=显示，false=隐藏
 
     - platform: "rss"
-      url: "https://dfuttu1.github.io/index.xml"  # RSS 订阅地址，通常指向 Hugo 生成的 index.xml
+      url: "https://dfuttu1.github.io/blog/index.xml"  # RSS 订阅地址，通常指向 Hugo 生成的 index.xml
       icon: "fas fa-rss"
       label: "RSS 订阅"
       show: true
@@ -266,71 +266,77 @@ skills:
 
     categories:                              # 技能分类列表
 
-      - icon: "fab fa-python"                # 分类图标（Font Awesome）
+      - icon: "fab fa-python"               # 分类图标（Font Awesome）
         title: "Python"                      # 分类名称
-        description: "脚本自动化、数据处理、算法实现"  # 分类简述，展示在卡片中
+        description: "Django、DRF、FastAPI"  # 分类简述，展示在卡片中
         progress: 90                         # 进度条百分比：0-100，仅作为视觉展示参考
 
       - icon: "fab fa-java"
         title: "Java"
-        description: "Spring Boot、并发与 JVM 调优"
+        description: "JVM、Spring Cloud、MyBatis-Plus、SSM"
         progress: 85
 
       - icon: "fas fa-code"
         title: "Golang"
-        description: "高并发服务、CLI 工具、云原生组件"
+        description: "Gin 框架、并发编程"
         progress: 80
 
       - icon: "fas fa-database"
-        title: "数据库与存储"
-        description: "Neo4j、MySQL、Redis、数据迁移"
-        progress: 80
-
-      - icon: "fab fa-docker"
-        title: "容器与部署"
-        description: "Docker、Docker Compose、Nginx、Linux 运维"
+        title: "数据库与中间件"
+        description: "MySQL、Redis、Neo4j 图数据库"
         progress: 85
 
+      - icon: "fab fa-docker"
+        title: "容器与运维"
+        description: "Docker、Kubernetes、Nginx、Shell"
+        progress: 85
+
+      - icon: "fas fa-robot"
+        title: "AI 应用"
+        description: "LangGraph、大模型应用、Vibe Coding"
+        progress: 75
 
   # ----- 详细技能列表 -----
   # 以条目形式展示每项技能的掌握程度、描述和相关项目经历
   skills:
 
-    - name: "Python"                         # 技能名称
+    - name: "Python 后端"                    # 技能名称
       level: 90                              # 掌握程度：0-100
-      description: "写自动化脚本、数据处理和算法实现，熟悉 FastAPI / Flask。"  # 技能描述段落
-      projects:                              # 与该技能相关的项目列表，可为空数组 []
-        - "文档解析与数据清洗脚本"
-        - "模型推理服务"
-        - "运维自动化工具"
+      description: "Django / DRF / FastAPI，写接口、权限体系和小程序后端。"  # 技能描述段落
+      projects:                              # 与该技能相关的项目列表
+        - "Django 项目实战 - 供应链系统"
+        - "Django 项目实战 - 前后端分离（Vue）"
+        - "FastAPI Web 开发"
 
-    - name: "Java"
+    - name: "Java 后端"
       level: 85
-      description: "Spring Boot 服务开发，熟悉并发编程和 JVM 排障。"
-      projects: []                           # 示例项目稍后补充
+      description: "SSM / Spring Cloud / MyBatis-Plus，JVM 内存模型与 GC 调优。"
+      projects:
+        - "乐尚代驾 / 尚庭公寓"
+        - "JavaWeb + JDBC / Maven"
 
     - name: "Golang"
       level: 80
-      description: "用 Go 写高并发服务和命令行工具，熟悉 goroutine 与 channel。"
+      description: "Gin 框架、goroutine 与 channel，写服务和命令行工具。"
       projects: []                           # 示例项目稍后补充
 
-    - name: "Neo4j / 图数据库"
-      level: 80
-      description: "图模型设计、Cypher 查询和数据迁移（版本间导入导出）。"
+    - name: "数据库与中间件"
+      level: 85
+      description: "MySQL 索引与调优、Redis 7 缓存、Neo4j 图模型与 Cypher、知识图谱迁移。"
       projects:
         - "Neo4j 数据迁移 V5"
-        - "图谱检索服务"
+        - "知识图谱迁移"
 
-    - name: "Docker / 容器化部署"
+    - name: "容器与运维"
       level: 85
-      description: "镜像构建、Compose 编排、Nginx 反代与内网服务部署。"
+      description: "Docker / Compose、Kubernetes、Nginx 反代与证书、Shell 自动化、Linux 排障。"
       projects:
         - "合肥环境容器化部署"
         - "Filebrowser / NFS 服务搭建"
 
-    - name: "AI 大模型应用"
+    - name: "AI 应用与大模型"
       level: 75
-      description: "本地模型部署（Ollama）、RAG 与 Agent 工作流编排。"
+      description: "LangGraph 工作流编排、本地模型部署（Ollama）、Vibe Coding 实践。"
       projects:
         - "本地大模型推理环境"
 
@@ -339,25 +345,25 @@ skills:
   # 以时间轴形式展示技术成长历程
   timeline:
 
-    - year: "2021"                           # 时间节点（年份）
-      title: "打基础"                        # 该阶段标题
-      description: "系统学习 Java / Python，从写脚本开始碰服务器和 Linux。"  # 阶段描述
-
-    - year: "2023"
-      title: "后端与数据"
-      description: "做服务端开发，接触图数据库和批量数据处理。"
-
-    - year: "2024"
-      title: "运维与部署"
-      description: "Docker、Nginx、内网服务搭建，开始把踩坑过程写成笔记。"
+    - year: "2024"                           # 时间节点（年份）
+      title: "编程基本功"                    # 该阶段标题
+      description: "C 语言、Shell 与 Linux 基础，开始给服务器写脚本。"  # 阶段描述
 
     - year: "2025"
-      title: "容器化落地"
-      description: "完整环境容器化部署，处理迁移、备份与权限问题。"
+      title: "Java 后端体系"
+      description: "JavaWeb → SSM → Spring Cloud，补 JVM、MySQL、Redis、Maven。"
+
+    - year: "2025"
+      title: "转 Go"
+      description: "学 Golang + Gin，用更轻的方式写高并发服务和工具。"
 
     - year: "2026"
-      title: "算法与 AI 应用"
-      description: "投入算法开发与大模型应用，研究 RAG、Agent 与本地推理。"
+      title: "Python 后端"
+      description: "Django / DRF / FastAPI 全套项目实战，配 Vue3 做前后端分离。"
+
+    - year: "2026"
+      title: "容器化与 AI"
+      description: "Docker / Kubernetes 落地部署，进入 LangGraph 与大模型应用。"
 
 
 # ============================================================================

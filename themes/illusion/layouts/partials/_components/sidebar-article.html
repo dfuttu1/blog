@@ -75,7 +75,7 @@
   <div class="side-box-title"><i class="fas fa-tags"></i> {{ i18n "post_tags" }}</div>
   <div class="side-tags">
     {{ range .Params.tags }}
-    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+    <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
     {{ end }}
   </div>
 </div>

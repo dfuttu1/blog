@@ -52,7 +52,7 @@
     {{- /* 标签列表 */ -}}
     {{ if .Params.tags }}
     <div class="article-tag-list">
-      {{ range .Params.tags }}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>{{ end }}
+      {{ range .Params.tags }}<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>{{ end }}
     </div>
     {{ end }}
   </div>

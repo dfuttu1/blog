@@ -5,7 +5,7 @@
     <div class="header-content">
       {{- /* 站点品牌：站点名称和副标题 */ -}}
       <div class="site-brand">
-        <a href="{{ "/" | relURL }}" class="site-title">{{ site.Title }}</a>
+        <a href="{{ site.Home.RelPermalink }}" class="site-title">{{ site.Title }}</a>
         <div class="site-subtitle">{{ i18n "header_subtitle" }}</div>
       </div>
 

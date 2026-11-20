@@ -11,7 +11,7 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
 {{- /* SVG 图标 */ -}}
-<link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | relURL }}">
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
 
 {{- /* ========== 资源预连接和 DNS 预解析 ========== */ -}}
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
