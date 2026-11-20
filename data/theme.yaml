@@ -335,10 +335,23 @@ skills:
         - "Filebrowser / NFS 服务搭建"
 
     - name: "AI 应用与大模型"
-      level: 75
-      description: "LangGraph 工作流编排、本地模型部署（Ollama）、Vibe Coding 实践。"
+      level: 80
+      description: "RAG 检索增强、从零预训练中文 GPT、本地模型部署（Ollama）。"
       projects:
+        - "ccgp-rag — 政采 RAG 知识库"
+        - "llm-lab — 从零实现并预训练中文 GPT"
         - "本地大模型推理环境"
+
+    - name: "LangChain / LangGraph"
+      level: 75
+      description: "LangChain 应用开发、LangGraph 长期记忆智能体编排。"
+      projects:
+        - "吴恩达《基于LangChain的大语言模型应用开发》"
+        - "吴恩达《基于LangGraph构建长期记忆智能体》"
+        - "吴恩达 AI Agent in LangGraph 代码资源"
+        - "尚硅谷 LangChain 从入门到实战"
+        - "lang-graph-learning"
+        - "基于 LLM 的生成式人工智能 generative-ai-with-llms"
 
 
   # ----- 技能发展时间线 -----
