@@ -228,10 +228,10 @@ social:
       label: "GitHub"                        # 悬停提示文字和辅助标签
       show: true                             # 是否启用并显示该社交图标：true=显示，false=隐藏
 
-    - platform: "rss"
-      url: "https://dfuttu1.github.io/blog/index.xml"  # RSS 订阅地址，通常指向 Hugo 生成的 index.xml
-      icon: "fas fa-rss"
-      label: "RSS 订阅"
+    - platform: "website"
+      url: "https://dfuttu1.github.io"  # 个人学术首页
+      icon: "fas fa-user-graduate"
+      label: "个人主页"
       show: true
 
     - platform: "twitter"
