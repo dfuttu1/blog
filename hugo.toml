@@ -19,7 +19,7 @@ enableRobotsTXT = true
   email = ""
   github = "dfuttu1"
   domain = "dfuttu1.github.io"
-  siteTime = "2026-11-20T00:00:00+08:00"
+  siteTime = "2026-11-20T15:00:00+08:00"
 
   enableDarkMode = true
   enableSearch = true
@@ -93,6 +93,13 @@ enableRobotsTXT = true
     weight = 20
     [menus.main.params]
       icon = 'fas fa-tags'
+
+  [[menus.main]]
+    name = '技能'
+    url = '/skills/'
+    weight = 25
+    [menus.main.params]
+      icon = 'fas fa-code'
 
   [[menus.main]]
     name = '关于'

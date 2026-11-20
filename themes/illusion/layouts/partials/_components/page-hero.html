@@ -50,13 +50,13 @@
       </div>
     </div>
     <script>
-      /* 今日诗词：首页名言动态获取，失败时保留静态兜底文案 */
+      /* 今日诗词：首页名言动态获取，失败时保留静态兜底文案。
+         注意：不能带自定义请求头（会触发 CORS 预检，接口对 OPTIONS 返回 403），
+         改用官方 SDK 的方式：token 走 query，且两次请求都带 credentials（token 与 cookie 绑定）。 */
       (function () {
         var textEl = document.getElementById('hero-quote-text');
         var authorEl = document.getElementById('hero-quote-author');
-        if (!textEl || !authorEl) return;
-
-        var TOKEN_KEY = 'jinrishici_token';
+        if (!textEl || !authorEl || !window.fetch) return;
 
         function apply(d) {
           if (!d || !d.content) return;
@@ -66,34 +66,16 @@
             (o.title ? '\u300a' + o.title + '\u300b' : '');
         }
 
-        function fetchSentence(token) {
-          return fetch('https://v2.jinrishici.com/sentence', {
-            headers: { 'X-User-Token': token }
-          }).then(function (r) { return r.json(); });
-        }
-
-        function freshToken() {
-          return fetch('https://v2.jinrishici.com/token')
-            .then(function (r) { return r.json(); })
-            .then(function (j) {
-              if (j.status !== 'success' || !j.data) throw new Error('token');
-              try { localStorage.setItem(TOKEN_KEY, j.data); } catch (e) {}
-              return j.data;
-            });
-        }
-
-        Promise.resolve()
-          .then(function () {
-            var cached = null;
-            try { cached = localStorage.getItem(TOKEN_KEY); } catch (e) {}
-            return cached || freshToken();
+        fetch('https://v2.jinrishici.com/token', { credentials: 'include' })
+          .then(function (r) { return r.json(); })
+          .then(function (t) {
+            if (t.status !== 'success' || !t.data) throw new Error('token');
+            var url = 'https://v2.jinrishici.com/one.json?client=browser-sdk/1.2&X-User-Token=' +
+              encodeURIComponent(t.data);
+            return fetch(url, { credentials: 'include' }).then(function (r) { return r.json(); });
           })
-          .then(fetchSentence)
           .then(function (j) {
-            if (j.status === 'success') { apply(j.data); return; }
-            return freshToken().then(fetchSentence).then(function (j2) {
-              if (j2.status === 'success') apply(j2.data);
-            });
+            if (j.status === 'success') apply(j.data);
           })
           .catch(function () { /* 静默失败，保留静态文案 */ });
       })();

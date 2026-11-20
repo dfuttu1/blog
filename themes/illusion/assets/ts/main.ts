@@ -1500,22 +1500,20 @@ const FooterManager = {
     if (days < 0) { months--; const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0); days += prevMonth.getDate(); }
     if (months < 0) { years--; months += 12; }
 
-    const dateNums = [this.pad4(years), this.pad2(months), this.pad2(days), this.pad2(hours), this.pad2(minutes), this.pad2(seconds)];
-
-    const seps = [
-      '<span style="color:var(--c-text-subtle);margin:0 1px;">-</span>',
-      '<span style="color:var(--c-text-subtle);margin:0 1px;">-</span>',
-      '<span style="color:#D4B040;margin:0 1px;font-weight:var(--fw-bold);">T</span>',
-      '<span style="color:var(--c-text-subtle);margin:0 1px;">:</span>',
-      '<span style="color:var(--c-text-subtle);margin:0 1px;">:</span>'
-    ];
+    // 只显示有意义的单位：年/月/天/时/分/秒，忽略前导 0
+    const rawValues = [years, months, days, hours, minutes, seconds];
+    const unitNames = ['\u5e74', '\u6708', '\u5929', '\u65f6', '\u5206', '\u79d2'];
+    let firstIdx = rawValues.findIndex(function (v) { return v > 0; });
+    if (firstIdx < 0) firstIdx = rawValues.length - 1;
 
     const label = I18n.t('footer_uptime_label');
     let html = `${label} `;
-    for (let i = 0; i < dateNums.length; i++) {
-      if (i > 0) html += seps[i - 1];
-      html += `<span style="color:${this.uptimeColors[i]};font-weight:var(--fw-semibold);font-variant-numeric:tabular-nums;">${dateNums[i]}</span>`;
+    for (let i = firstIdx; i < rawValues.length; i++) {
+      const color = this.uptimeColors[i] || 'inherit';
+      html += `<span style="color:${color};font-weight:var(--fw-semibold);font-variant-numeric:tabular-nums;">${rawValues[i]}</span>${unitNames[i]}`;
+      if (i < rawValues.length - 1) html += ' ';
     }
+    html += ' ';
 
     // 追加页面渲染耗时信息（从页面开始加载到当前脚本执行的时间，保留两位小数）
     const renderLabel = I18n.t('footer_render_time');
