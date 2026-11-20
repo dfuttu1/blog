@@ -20,7 +20,7 @@
           <i class="{{ $buttons.home.icon | default "fas fa-home" }}"></i>
           {{ $buttons.home.text | default (i18n "btn_back_home") }}
         </a>
-        <a href="{{ $buttons.posts.url | default "/posts/" | relURL }}" class="btn btn-secondary">
+        <a href="{{ $buttons.posts.url | default "/posts/" | strings.TrimPrefix "/" | relURL }}" class="btn btn-secondary">
           <i class="{{ $buttons.posts.icon | default "fas fa-file-alt" }}"></i>
           {{ $buttons.posts.text | default (i18n "btn_browse") }}
         </a>
