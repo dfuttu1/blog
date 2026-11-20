@@ -22,7 +22,7 @@
     {{- /* 如果文章总数超过展示数量，显示"查看更多"按钮 */ -}}
     {{ if gt (len (where site.RegularPages "Type" "posts")) $postCount }}
     <div class="text-center" data-aos="fade-up">
-      <a href="{{ $postsData.showMore.url | default "/posts" }}" class="btn btn-outline">
+      <a href="{{ $postsData.showMore.url | default "/posts" | strings.TrimPrefix "/" | relURL }}" class="btn btn-outline">
         <i class="fas fa-th-large"></i>
         <span>{{ $postsData.showMore.text | default (i18n "btn_view_all") }}</span>
         <i class="fas fa-arrow-right"></i>

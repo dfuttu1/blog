@@ -28,12 +28,12 @@
           {{- /* CTA 按钮组 */ -}}
           <div class="hero-actions">
             {{ with $hero.primaryBtn }}
-            <a href="{{ .url | default "/posts" }}" class="btn btn-primary btn-anime">
+            <a href="{{ .url | default "/posts" | strings.TrimPrefix "/" | relURL }}" class="btn btn-primary btn-anime">
               <i class="fas fa-book-open"></i> {{ .text | default (i18n "btn_read_article") }}
             </a>
             {{ end }}
             {{ with $hero.secondaryBtn }}
-            <a href="{{ .url | default "/about" }}" class="btn btn-secondary btn-anime">
+            <a href="{{ .url | default "/about" | strings.TrimPrefix "/" | relURL }}" class="btn btn-secondary btn-anime">
               <i class="fas fa-heart"></i> {{ .text | default (i18n "btn_about_me") }}
             </a>
             {{ end }}
